@@ -1,0 +1,19 @@
+cc_library_shared {
+    name: "libdislocator",
+
+    srcs: [
+        "libdislocator.so.c",
+    ],
+
+    header_libs: [
+        "libafl_headers",
+    ],
+
+    cflags: [
+        "-Wno-unused-parameter",
+    ],
+
+    sanitize: {
+        never: true,
+    },
+}
