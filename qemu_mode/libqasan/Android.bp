@@ -1,0 +1,31 @@
+cc_library_shared {
+    name: "libqasan",
+
+    srcs: [
+        "libqasan.c",
+        "hooks.c",
+        "malloc.c",
+        "string.c",
+        "uninstrument.c",
+        "patch.c",
+        "dlmalloc.c",
+    ],
+
+    header_libs: [
+        "libqemuafl_headers",
+    ],
+
+    cflags: [
+        "-Wno-int-to-void-pointer-cast",
+        "-Wno-expansion-to-defined",
+        "-Wno-null-pointer-arithmetic",
+        "-Wno-unused-variable",
+        "-Wno-pointer-arith",
+        "-ggdb",
+        "-O0",
+    ],
+
+    sanitize: {
+        never: true,
+    },
+}
