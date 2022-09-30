@@ -12,6 +12,10 @@
 
 #include <utils/Compat.h>
 
+#ifndef __unused
+#define __unused __attribute__((__unused__))
+#endif
+
 #define PAGE_SIZE 4096
 
 static bool ashmem_validate_stat(int fd, struct stat *buf)
@@ -34,7 +38,7 @@ int ashmem_valid(int fd)
     return ashmem_validate_stat(fd, &buf);
 }
 
-int ashmem_create_region(const char* name, size_t size)
+int ashmem_create_region(const char* name __unused, size_t size)
 {
     char pattern[PATH_MAX];
     snprintf(pattern, sizeof(pattern), "/tmp/android-ashmem-%d-XXXXXXXXX", getpid());
