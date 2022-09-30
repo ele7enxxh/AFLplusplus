@@ -293,4 +293,6 @@ cc_library_headers {
 subdirs = [
     "custom_mutators",
     "utils/libdislocator",
+    "utils/libashmem",
+    "qemu_mode/libqasan",
 ]
