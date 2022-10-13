@@ -22,3 +22,6 @@
 [submodule "nyx_mode/packer"]
 	path = nyx_mode/packer
 	url = https://github.com/nyx-fuzz/packer.git
+[submodule "qemu_mode/qemuafl"]
+	path = qemu_mode/qemuafl
+	url = https://github.com/ele7enxxh/qemuafl
