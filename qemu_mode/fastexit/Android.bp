@@ -1,0 +1,18 @@
+cc_library {
+    name: "libfastexit",
+
+    srcs: [
+        "fastexit.c",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    host_supported: true,
+
+    sanitize: {
+        never: true,
+    },
+}
